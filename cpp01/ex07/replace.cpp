@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 20:52:19 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/07 02:21:12 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/20 20:24:32 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Replace::replace(std::string filename, std::string s1, std::string s2)
 	while(!read_file.eof())
 	{
 		std::string str;
-		getline(read_file, str);
+		std::getline(read_file, str);
 		if (str.find(s1) != std::string::npos)
 			str = replace_str(str, s1, s2);
 		write_file << str << '\n';

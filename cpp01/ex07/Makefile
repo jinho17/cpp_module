@@ -20,4 +20,9 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+test:
+	./replace test
+	./replace test "" ""
+	./replace test you TEST1234
+
+.PHONY: all clean fclean re test
