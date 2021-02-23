@@ -1,48 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 20:40:58 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/24 01:48:35 by jinkim           ###   ########.fr       */
+/*   Created: 2021/02/23 22:48:16 by jinkim            #+#    #+#             */
+/*   Updated: 2021/02/24 03:09:01 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef NINJATRAP_HPP
+# define NINJATRAP_HPP
 
 # include <iostream>
 # include <string>
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
 
-class FragTrap
+class NinjaTrap: virtual public ClapTrap
 {
 private:
-	FragTrap();
-
-	int hit;
-	int maxHit;
-	int energy;
-	int maxEnergy;
-	int level;
-	std::string name;
-	int meleeDamage;
-	int rangedDamage;
-	int armorDamageReduction;
-	static std::string attackPool[5];
+	NinjaTrap();
 
 public:
-	FragTrap(std::string name);
-	virtual ~FragTrap();
-	FragTrap(FragTrap const &copy);
-	FragTrap &operator=(FragTrap const &ref);
+	NinjaTrap(std::string name);
+	virtual ~NinjaTrap();
+	NinjaTrap(NinjaTrap const &copy);
+	NinjaTrap &operator=(NinjaTrap const &ref);
 
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	void vaulthunter_dot_exe(std::string const &target);
+	void ninjaShoebox(ClapTrap &clap);
+	void ninjaShoebox(FragTrap &frag);
+	void ninjaShoebox(ScavTrap &scav);
+	void ninjaShoebox(NinjaTrap &ninja);
 };
 
 #endif

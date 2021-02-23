@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 20:40:58 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/24 01:48:35 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/24 03:20:44 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,12 @@
 
 # include <iostream>
 # include <string>
+# include "ClapTrap.hpp"
 
-class FragTrap
+class FragTrap: virtual public ClapTrap
 {
-private:
+protected:
 	FragTrap();
-
-	int hit;
-	int maxHit;
-	int energy;
-	int maxEnergy;
-	int level;
-	std::string name;
-	int meleeDamage;
-	int rangedDamage;
-	int armorDamageReduction;
 	static std::string attackPool[5];
 
 public:
@@ -40,8 +31,6 @@ public:
 
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const &target);
 };
 
