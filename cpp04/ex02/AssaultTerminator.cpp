@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:54:49 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/25 14:12:52 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/27 17:31:45 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ AssaultTerminator::AssaultTerminator()
 
 AssaultTerminator::~AssaultTerminator()
 {
-    std::cout << "I’ll be back..." << std::endl;
+    std::cout << "I'll be back..." << std::endl;
 }
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const &copy)

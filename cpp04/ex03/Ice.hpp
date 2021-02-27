@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 14:52:36 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/25 14:57:58 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/27 17:34:59 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
     Ice(Ice const &copy);
     Ice &operator=(Ice const &ref);
 
-    Ice *clone() const;
+    AMateria *clone() const;
     void use(ICharacter& target);
 };
 

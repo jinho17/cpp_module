@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:02:50 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/25 14:52:00 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/27 23:28:21 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ AMateria &AMateria::operator=(AMateria const &ref)
     return (*this);
 }
 
-std::string const &getType() const
+std::string const &AMateria::getType() const
 {
-    return (*type);
+    return (type);
 }
 
-unsigned int getXP() const
+unsigned int AMateria::getXP() const
 {
     return (_xp);
 }
 
-void use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
-    (void)target
+    (void)target;
     _xp += 10;
 }

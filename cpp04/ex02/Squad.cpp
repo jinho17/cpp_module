@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:47:55 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/25 14:02:20 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/27 23:40:40 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Squad::Squad(Squad const &copy)
 {
     N = 0;
     for (int i = 0; i < copy.getCount(); i++)
-        push(copy.getUnit(i));
+        push(copy.getUnit(i)->clone());
 }
 
 Squad &Squad::operator=(Squad const &ref)
@@ -45,7 +45,7 @@ Squad &Squad::operator=(Squad const &ref)
         units = nullptr;
     }
     for(int i = 0; i < N; i++)
-        push(ref.getUnit(i));
+        push(ref.getUnit(i)->clone());
     return (*this);
 }
 

@@ -6,42 +6,37 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 14:52:29 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/25 15:00:34 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/27 23:37:14 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Ice.hpp"
 
-Ice::Ice()
+Ice::Ice(): AMateria("ice")
 {
-    type = "ice";
 }
 
 Ice::~Ice()
 {
 }
 
-Ice::Ice(Ice const &copy)
+Ice::Ice(Ice const &copy): AMateria(copy)
 {
-    _xp = copy._xp;
-    type = copy.type;
 }
 
 Ice &Ice::operator=(Ice const &ref)
 {
     _xp = ref._xp;
-    type = ref.type;
     return (*this);
 }
 
-Ice *clone() const
+AMateria *Ice::clone() const
 {
-
+	return (new Ice(*this));
 }
 
-void use(ICharacter& target)
+void Ice::use(ICharacter& target)
 {
-    (void)target
-    _xp += 10;
-    std::cout << "* shoots an ice bolt at ice *" << std::endl;
+    AMateria::use(target);
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

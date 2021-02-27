@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:03:07 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/25 14:54:15 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/27 23:36:10 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include <iostream>
 # include <string>
+class AMateria;
 # include "ICharacter.hpp"
 
 class AMateria
 {
 private:
     AMateria();
+protected:
     unsigned int _xp;
     std::string type;
 
