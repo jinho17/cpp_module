@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:47:39 by jinkim            #+#    #+#             */
-/*   Updated: 2021/02/24 17:10:55 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/02/28 16:20:44 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void Character::attack(Enemy *enemy)
 {
 	if (!weapon || !enemy)
 		return;
-	if (ap == weapon->getAPCost())
+	if (ap < weapon->getAPCost())
 		return;
 	ap -= weapon->getAPCost();
 	std::cout << name << " attacks " << enemy->getType() << " with a " << weapon->getName() << std::endl;
