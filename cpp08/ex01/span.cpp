@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 19:04:11 by jinkim            #+#    #+#             */
-/*   Updated: 2021/03/06 23:31:53 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/03/10 17:37:05 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ long Span::longestSpan()
 
 	std::vector<int>::iterator min = std::min_element(numbers.begin(), numbers.end());
 	std::vector<int>::iterator max = std::max_element(numbers.begin(), numbers.end());
-	return (std::abs(*max - *min));
+	return (std::abs((long)*max - (long)*min));
 }
