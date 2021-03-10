@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 01:03:03 by jinkim            #+#    #+#             */
-/*   Updated: 2021/03/06 02:40:00 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/03/10 14:28:55 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 int main()
 {
 	int arr1[10] = {0,1,2,3,4,5,6,7,8,9};
+	::iter<int>(arr1, 10, show);
+	std::cout << std::endl;
+	::iter<const int>(arr1, 10, show);
+	std::cout << std::endl;
 	::iter(arr1, 10, show);
 
 	std::cout << "\n-------------" << std::endl;

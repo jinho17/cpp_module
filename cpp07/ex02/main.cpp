@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 01:03:03 by jinkim            #+#    #+#             */
-/*   Updated: 2021/03/06 03:37:59 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/03/10 15:08:41 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,19 @@ int main()
 	std::cout << ", b size : " << b.size() << std::endl;
 	for(int i = 0; i < (int)a.size(); i++)
 	{
+		std::cout << "a[" << i << "]:" << a[i] << " | ";
+	}
+	std::cout << std::endl;
+	for(int i = 0; i < (int)a.size(); i++)
+	{
 		a[i] = i;
 		std::cout << "a[" << i << "]:" << a[i] << " | ";
+	}
+	std::cout << std::endl;
+	Array<int> c(a);
+	for(int i = 0; i < (int)c.size(); i++)
+	{
+		std::cout << "c[" << i << "]:" << c[i] << " | ";
 	}
 
 	std::cout << "\n-------------" << std::endl;
