@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 01:03:03 by jinkim            #+#    #+#             */
-/*   Updated: 2021/03/10 14:39:14 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/03/10 17:04:39 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,36 @@
 #include <iostream>
 #include <string>
 
+class Awesome {
+public:
+	Awesome( int n ) : _n( n ) {}
+	bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+	bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
+	bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+	bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+	bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+	bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+
+	int const &getN() const
+	{
+	    return this->_n;
+	}
+private:
+	int _n;
+};
+
 int main()
 {
-	int a = 2;
-	int b = 3;
+	Awesome a(2);
+	Awesome b(3);
+
+	//int a = 2;
+	//int b = 3;
 	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "a = " << a.getN() << ", b = " << b.getN()  << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ).getN()  << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ).getN()  << std::endl;
+
 	std::string c = "chaine1";
 	std::string d = "chaine2";
 	::swap(c, d);

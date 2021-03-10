@@ -6,7 +6,7 @@
 /*   By: jinkim <jinkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 02:44:44 by jinkim            #+#    #+#             */
-/*   Updated: 2021/03/06 03:28:38 by jinkim           ###   ########.fr       */
+/*   Updated: 2021/03/10 16:40:23 by jinkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,14 @@ public:
 		return (arr[idx]);
 	}
 
-	unsigned int size()
+	T const &operator[](unsigned int idx) const
+	{
+		if (idx >= n)
+			throw OutOfLimitsException();
+		return (arr[idx]);
+	}
+
+	unsigned int size() const
 	{
 		return (n);
 	}
